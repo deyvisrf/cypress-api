@@ -26,3 +26,13 @@ Cypress.Commands.add('getToken', account => {
         return token
     })
 })
+
+Cypress.Commands.add('resetRest', account => {
+    cy.getToken(account).then(token => {
+        cy.request({
+            method: 'GET',
+            url: '/reset',
+            headers: { Authorization: `JWT ${token}`}
+        })
+    })
+})
