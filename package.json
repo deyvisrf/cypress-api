@@ -1,0 +1,23 @@
+{
+  "name": "cypress-api",
+  "version": "1.0.0",
+  "description": "Testes automatizados de API com Cypress",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^4.8.0"
+  },
+  "devDependencies": {
+    "fake": "^0.2.2",
+    "faker": "^4.1.0"
+  },
+  "scripts": {
+    "test": "cypress run"
+  },
+  "keywords": [
+    "cypress",
+    "API",
+    "automation"
+  ],
+  "author": "Deyvis Ferreira",
+  "license": "MIT"
+}
