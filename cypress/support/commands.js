@@ -36,3 +36,16 @@ Cypress.Commands.add('resetRest', account => {
         })
     })
 })
+
+Cypress.Commands.add('updateAccount', account => {
+    cy.getToken(account).then(token => {
+        cy.request({
+            method: 'POST',
+            url: '/contas',
+            headers: { Authorization: `JWT ${token}`},
+            body: {
+                nome: account.descricao
+            }
+        }) 
+    })
+})

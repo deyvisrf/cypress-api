@@ -21,18 +21,7 @@ describe('Random tests API', () => {
     })
 
     it('Update accounts', () => {
-        cy.getToken(account)
-            .then(token => {
-
-                cy.request({
-                    method: 'POST',
-                    url: '/contas',
-                    headers: { Authorization: `JWT ${token}`},
-                    body: {
-                        nome: account.descricao
-                    }
-                }) 
-            })
+        cy.updateAccount(account)
         .then(res => {
             expect(res.status).to.equal(201)
             expect(res.body.nome).to.equal(account.descricao)
