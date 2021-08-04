@@ -1,0 +1,7 @@
+language: cypress
+python:
+  - 4.8.0
+install:
+  - make install
+script:
+  - make test
